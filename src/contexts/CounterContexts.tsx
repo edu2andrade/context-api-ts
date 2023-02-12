@@ -10,8 +10,8 @@ type CounterContextType = {
 const initialValue = {
   counter: 0,
   doubleCounter: 0,
-  setCounter: () => {},
-  incrementCounter: () => {}
+  setCounter: () => { },
+  incrementCounter: () => { }
 }
 
 interface CounterContextProps {
@@ -33,7 +33,12 @@ export const CounterContextProvider = ({ children }: CounterContextProps) => {
   }, [counter])
 
   return (
-    <CounterContext.Provider value={{counter, setCounter, doubleCounter, incrementCounter}}>
+    <CounterContext.Provider value={{
+      counter,
+      setCounter,
+      doubleCounter,
+      incrementCounter
+    }}>
       {children}
     </CounterContext.Provider>
   )
